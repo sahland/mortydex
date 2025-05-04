@@ -1,16 +1,8 @@
 # mortydex
 
-A new Flutter project.
+## Описание задания
 
-## Getting Started
+Необходимо разработать мобильное приложение на Flutter, которое загружает список персонажей мультсериала "Рик и Морти" с публичного API. Приложение должно позволять добавлять персонажей в избранное и обеспечивать оффлайн-доступ к данным.
 
-This project is a starting point for a Flutter application.
+- [Видеообзор работы приложения](https://drive.google.com/file/d/1c79pvspfvKG40IzL-ran2X88eEpe5BIL/view?usp=share_link)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
