@@ -31,7 +31,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
           grayTextField: LightColorPalette.textGray,
           dialogBackground: LightColorPalette.lightBar,
         );
-        
+
   const AppColorScheme.dark()
       : this._(
           primary: DarkColorPalette.darkPrimary,

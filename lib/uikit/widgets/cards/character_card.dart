@@ -33,22 +33,21 @@ class CharacterCard extends StatelessWidget {
       ),
       elevation: 2,
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Row(
-          children: [
-            _buildAvatar(),
-            const SizedBox(width: 12.0),
-            Expanded(
-              child: _buildInfo(context),
-            ),
-            const SizedBox(width: 12.0),
-            CharacterFavoriteButton(
-              isFavorite: isFavorite,
-              onPressed: onFavoriteToggle,
-            ),
-          ],
-        )
-      ),
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            children: [
+              _buildAvatar(),
+              const SizedBox(width: 12.0),
+              Expanded(
+                child: _buildInfo(context),
+              ),
+              const SizedBox(width: 12.0),
+              CharacterFavoriteButton(
+                isFavorite: isFavorite,
+                onPressed: onFavoriteToggle,
+              ),
+            ],
+          )),
     );
   }
 
@@ -93,41 +92,37 @@ class CharacterCard extends StatelessWidget {
 
   Widget _buildStatusAndSpecies(ColorScheme colorScheme) {
     final statusColor = switch (status.toLowerCase()) {
-      'Живой' => Colors.green,
-      'Умер' => Colors.red,
+      'Alive' => Colors.green,
+      'Dead' => Colors.red,
       _ => Colors.grey,
     };
 
     return RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(
-            text: status,
-            style: TextStyle(
-              color: statusColor,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          const TextSpan(
-            text: ' • ',
-            style: TextStyle(
-              color: Colors.grey,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          TextSpan(
-            text: species,
-            style: TextStyle(
-              color: colorScheme.onSurface.withOpacity(0.7),
-            )
-          )
-        ]
-      )
-    );
+        text: TextSpan(children: [
+      TextSpan(
+        text: status,
+        style: TextStyle(
+          color: statusColor,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      const TextSpan(
+        text: ' • ',
+        style: TextStyle(
+          color: Colors.grey,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      TextSpan(
+          text: species,
+          style: TextStyle(
+            color: colorScheme.onSurface.withOpacity(0.7),
+          ))
+    ]));
   }
 
   Widget _buildLocationInfo(ThemeData theme) {
-    const lastLocaion = 'Местоположение: ';
+    const lastLocaion = 'Location: ';
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

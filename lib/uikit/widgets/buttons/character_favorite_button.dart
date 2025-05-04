@@ -18,15 +18,14 @@ class CharacterFavoriteButton extends StatelessWidget {
     final theme = Theme.of(context);
 
     return IconButton(
-      onPressed: onPressed ?? () {},
-      icon: SvgPicture.asset(
-        _starIcon,
-        colorFilter: 
-          isFavorite ? ColorFilter.mode(theme.colorScheme.primary, BlendMode.srcIn) 
-          : ColorFilter.mode(theme.colorScheme.secondary, BlendMode.srcIn),
-        height: 24,
-        width: 24,
-      )
-    );
+        onPressed: onPressed ?? () {},
+        icon: SvgPicture.asset(
+          _starIcon,
+          colorFilter: isFavorite
+              ? ColorFilter.mode(theme.colorScheme.primary, BlendMode.srcIn)
+              : ColorFilter.mode(theme.colorScheme.secondary, BlendMode.srcIn),
+          height: 30,
+          width: 30,
+        ));
   }
 }
