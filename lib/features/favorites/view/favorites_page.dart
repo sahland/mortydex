@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mortydex/domain/domain.dart';
+import 'package:mortydex/features/favorites/favorites.dart';
 import 'package:mortydex/uikit/uikit.dart';
 
 class FavoritesPage extends StatefulWidget {
   const FavoritesPage({super.key});
 
-  final String title = 'Избранное';
+  final String title = 'Favorites';
   final double appBarHeight = 70.0;
   final double appBarElevation = 80.0;
 
@@ -29,23 +32,35 @@ class _FavoritesPageState extends State<FavoritesPage> {
           backgroundColor: theme.cardColor,
           surfaceTintColor: theme.cardColor,
           title: AppBarTitle(title: widget.title),
-          actions: [
-            ThemeButton(),
-            ],
+          actions: const [ThemeButton()],
         ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (context, index) => CharacterCard(
-              imageUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-              name: 'Рик Санчез',
-              status: 'Живой',
-              species: 'Человек',
-              location: 'Earth (C-137)',
-              isFavorite: true,
-              onFavoriteToggle: () {},
-            ),
-            childCount: 2,
-          ),
+        BlocBuilder<FavoritesCubit, List<CharacterModel>>(
+          builder: (context, favorites) {
+            return SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  final character = favorites[index];
+                  return AnimatedCharacterCard(
+                    index: index,
+                    child: CharacterCard(
+                      imageUrl: character.image,
+                      name: character.name,
+                      status: character.status,
+                      species: character.species,
+                      location: character.location.name,
+                      isFavorite: true,
+                      onFavoriteToggle: () {
+                        context
+                            .read<FavoritesCubit>()
+                            .toggleFavorite(character);
+                      },
+                    ),
+                  );
+                },
+                childCount: favorites.length,
+              ),
+            );
+          },
         ),
       ],
     );

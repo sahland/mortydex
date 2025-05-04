@@ -7,7 +7,7 @@ abstract class AppThemeData {
 
   static final lightTheme = ThemeData(
     useMaterial3: true,
-    extensions:  const [_lightColorScheme],
+    extensions: const [_lightColorScheme],
     brightness: Brightness.light,
     colorScheme: ColorScheme.light(
       primary: _lightColorScheme.primary,
@@ -25,7 +25,7 @@ abstract class AppThemeData {
     ),
   );
 
-  static final darkThem = ThemeData(
+  static final darkTheme = ThemeData(
     useMaterial3: true,
     extensions: const [_darkColorScheme],
     brightness: Brightness.dark,
