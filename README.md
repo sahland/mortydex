@@ -6,21 +6,21 @@
 
 - [Видеообзор работы приложения](https://drive.google.com/file/d/1c79pvspfvKG40IzL-ran2X88eEpe5BIL/view?usp=share_link)
 
-## Технологии
+# Технологии
 
-# State Management
+## State Management
 - BloC
 - Cubit
 
-# Навигация
+## Навигация
 - GoRoute
 
-# Работа с сетью
+## Работа с сетью
 - Dio
 - Retrofit
 - Json Serializable
 
-# Кеширование данных
+## Кеширование данных
 - Shared Preferences
 
 
